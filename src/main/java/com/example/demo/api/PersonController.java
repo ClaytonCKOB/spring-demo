@@ -18,7 +18,7 @@ public class PersonController {
     }
 
     @PostMapping
-    public void addPerson(@Valid @NotNull @RequestBody Person person){
+    public void addPerson(@RequestBody Person person){
         personService.addPerson(person);
     }
 
@@ -38,7 +38,7 @@ public class PersonController {
     }
 
     @PutMapping(path = "{id}")
-    public void updatePerson(@PathVariable("id") UUID id, @Valid @NotNull @RequestBody Person personToUpdate){
+    public void updatePerson(@PathVariable("id") UUID id, @RequestBody Person personToUpdate){
         personService.updatePerson(id, personToUpdate);
     }
 
